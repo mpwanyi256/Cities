@@ -30,7 +30,7 @@
                     <span>
                         <v-icon small left>mdi-account-multiple</v-icon>
                         <strong>Polulation:</strong></span>
-                    {{ city.population }}
+                        {{ city.population }}
                 </p>
                 <p>
                     <span>
@@ -48,7 +48,6 @@
     </div>
 </template>
 <script>
-// import MapView from '@/components/home/MapView.vue'
 
 export default {
   name: 'City',
@@ -57,16 +56,6 @@ export default {
     city: {
       type: Object,
       required: true
-    }
-  },
-
-  components: {
-    // MapView
-  },
-
-  data () {
-    return {
-      image: 'https://media.timeout.com/images/103161245/750/422/image.jpg'
     }
   },
 
@@ -82,7 +71,6 @@ export default {
 
     .city {
         min-height: 200px;
-        // width: 100%;
         background-color: $white;
         display: grid;
         grid-template-columns: 20% 80%;
@@ -105,33 +93,9 @@ export default {
             display: block;
         }
 
-        @media only screen and (max-width: 740px) {
-            display: flex;
-            flex-direction: column;
-            padding: 0;
-            margin: 5px 0 5px 0;
-            height: auto;
-            padding-bottom: $padding-space;
-
-            > div {
-                display: flex;
-                flex-direction: column;
-                height: auto;
-            }
-
-            .map-wrap {
-                border: 1px solid $nav-border-color;
-                border-radius: 0;
-                display: block;
-                height: 200px;
-            }
-        }
-
         .city-info {
             position: relative;
             .name {
-                // --margin-bottom: 4px;
-
                 p {
                     color: $navbar-text-color !important;
                     font-size: 14px;
@@ -154,15 +118,32 @@ export default {
                 bottom: 0;
                 margin-bottom: 0;
             }
+        }
 
-            // .landmarks {
-            //     p {
-            //         color: $navbar-text-color !important;
-            //         font-size: 14px;
-            //         font-weight: 300;
-            //         line-height: 1.5;
-            //     }
-            // }
+        @media only screen and (max-width: 740px) {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 5px 0 5px 0;
+            min-height: calc(100% - 30px);
+            padding-bottom: $padding-space;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            >div:last-child {
+                padding: 10px;
+            }
+
+            .map-wrap {
+                border: 1px solid $nav-border-color;
+                border-radius: 0;
+                display: block;
+                height: 400px;
+            }
+
         }
 
     }
