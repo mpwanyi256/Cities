@@ -38,15 +38,6 @@ export default {
         lng: 123.8854
       },
       zoom: 15,
-      options: {
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: true,
-        disableDefaultUi: false
-      },
       map: null
     }
   },
