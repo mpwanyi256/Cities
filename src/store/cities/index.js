@@ -27,6 +27,7 @@ export default {
         longitude: '-73.935242',
         population: '8419000',
         founded: '1624',
+        image: 'https://i.natgeofe.com/k/5b396b5e-59e7-43a6-9448-708125549aa1/new-york-statue-of-liberty_16x9.jpg',
         landmarks: [
           'Chrysler Building',
           'Brooklyn Bridge',
@@ -42,6 +43,7 @@ export default {
         longitude: '-3.703790',
         population: '3223000',
         founded: '1083',
+        image: 'https://www.flytap.com/-/media/Flytap/new-tap-pages/destinations/europe/spain/madrid/destinations-madrid-banner-mobile-1024x553.jpg',
         landmarks: [
           'Royal Palace',
           'Plaza Mayor',
@@ -57,6 +59,7 @@ export default {
         longitude: '37.618423',
         population: '11920000',
         founded: '1147',
+        image: 'https://cdni.rbth.com/rbthmedia/images/2021.09/original/613b682a15e9f95b493fec7a.jpg',
         landmarks: [
           "Saint Basil's Cathedral",
           'Kremlin',
@@ -72,6 +75,7 @@ export default {
         longitude: '139.839478',
         population: '13960000',
         founded: '1603',
+        image: 'https://www.japan.travel/tokyo-and-beyond-2020/wp/wp-content/uploads/2021/02/Arakura-Fuji-Sengen-Shrine-and-Mt.-Fuji-in-the-cherry-blossom-season.jpg',
         landmarks: [
           'Meji Shrine',
           'Asakusa',
@@ -87,6 +91,7 @@ export default {
         longitude: '3.406448',
         population: '14800000',
         founded: '1914',
+        image: 'https://www.dentons.com/-/media/images/website/background-images/offices/lagos/lagos.jpg',
         landmarks: [
           'Iga Idungaran',
           'Freedom Park',
@@ -102,6 +107,7 @@ export default {
         longitude: '-46.625290',
         population: '12330000',
         founded: '1554',
+        image: 'https://www.flytap.com/-/media/Flytap/new-tap-pages/destinations/south-america/brazil/sao-paulo/sao-paulo-banner-mobile-1024x553.jpg',
         landmarks: [
           'Mosteiro De Sao Bento',
           'Italian Building',
@@ -117,6 +123,7 @@ export default {
         longitude: '11.576124',
         population: '1472000',
         founded: '1158',
+        image: 'https://img.static-af.com/images/meta/IDname/CITY-MUC-1?aspect_ratio=12:5&max_width=1920',
         landmarks: [
           'Bavaria statue',
           'Marienplatz',

@@ -14,13 +14,12 @@ Vue.prototype.$eventBus = eventBus
 
 const VueGoogleMaps = require('vue2-google-maps')
 
+console.log('Map API key', process.env)
+
 Vue.use(VueGoogleMaps, {
   load: {
-    // key: 'AIzaSyA9NyjWH2-hZ8Ir37DM-8MKHedB4_XmU3I',
-    key: 'AIzaSyBsaxPBy3fJoc3cMmjXPQzDWn1gvUE3MKU',
+    key: process.env.VUE_APP_MAP_API_KEY,
     libraries: 'places'
-    // region: 'VI',
-    // language: 'vi'
   }
 })
 

@@ -6,13 +6,12 @@
             <v-img
                 alt="Ottonova logo"
                 class="logo shrink"
-                :src="image"
+                :src="city.image"
                 transition="scale-transition"
                 width="100%"
                 height="100%"
                 position="center"
             />
-            <!-- <MapView /> -->
         </div>
         <div class="city-info">
             <div class="name">
@@ -21,7 +20,11 @@
                     <span>
                         <v-icon small>mdi-earth</v-icon>
                     </span>
-                    {{ city.continent }}
+                    {{ city.continent }} |
+                    <span>
+                        <strong>Native name:</strong>
+                        {{ city.name_native }}
+                    </span>
                 </p>
                 <p>
                     <span>

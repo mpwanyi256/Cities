@@ -10,15 +10,6 @@
                 :position="Coordinates"
                 :clickable="true"
             />
-            <!-- <GmapMarker
-                v-else
-                v-for="(m, index) in cities"
-                :key="index"
-                :position="cityCoordinates(m)"
-                :clickable="true"
-                :draggable="true"
-                @click="center=m.position"
-            /> -->
         </GmapMap>
     </div>
 </template>
