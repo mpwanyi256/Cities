@@ -14,8 +14,6 @@ Vue.prototype.$eventBus = eventBus
 
 const VueGoogleMaps = require('vue2-google-maps')
 
-console.log('Map API key', process.env)
-
 Vue.use(VueGoogleMaps, {
   load: {
     key: process.env.VUE_APP_MAP_API_KEY,

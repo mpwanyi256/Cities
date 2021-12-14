@@ -36,7 +36,7 @@ export default {
 
             p {
                 font-size: 14px !important;
-                line-height: 18px !important;
+                line-height: 24px !important;
                 font-weight: normal !important;
                 color: $navbar-text-color !important;
                 margin-bottom: 0px !important;
