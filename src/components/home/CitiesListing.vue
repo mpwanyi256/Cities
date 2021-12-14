@@ -1,9 +1,9 @@
 <template>
     <div class="cities-listing">
         <City
-            v-for="(city, idx) in cities"
-            :key="idx"
-            :city="city"
+          v-for="(city, idx) in cities"
+          :key="idx"
+          :city="city"
         />
     </div>
 </template>
