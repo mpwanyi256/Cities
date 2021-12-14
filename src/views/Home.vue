@@ -1,18 +1,54 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="cities-listing">
+      <Cities />
+    </div>
+    <div class="cities-overview">
+      <MapView
+      :selected-city="selectedCity" />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import MapView from '@/components/home/MapView.vue'
+import Cities from '@/components/home/Cities.vue'
 
 export default {
   name: 'Home',
+
   components: {
-    HelloWorld
+    MapView,
+    Cities
+  },
+
+  data () {
+    return {
+      selectedCity: null
+    }
   }
 }
 </script>
+<style scoped lang="scss">
+  @import '@/styles/constants.scss';
+
+  .home {
+    height: calc(100vh - 56px);
+    display: grid;
+    grid-template-columns: 55% 45%;
+    overflow-y: auto;
+
+    > div {
+      width: 100%;
+      height: inherit;
+    }
+
+    @media only screen and (max-width: 740px) {
+      display: flex;
+      .cities-overview {
+        display: none;
+      }
+    }
+  }
+
+</style>
