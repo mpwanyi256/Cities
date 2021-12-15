@@ -1,10 +1,10 @@
 <template>
     <div class="cities-view">
         <CitiesCount
-            :cities="cities"
+          :cities="cities"
         />
         <CitiesListing
-            :cities="filteredSearch"
+          :cities="filteredSearch"
         />
     </div>
 </template>
@@ -12,7 +12,7 @@
 import CitiesCount from '@/components/home/CitiesCount.vue'
 import CitiesListing from '@/components/home/CitiesListing.vue'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Cities',
@@ -20,12 +20,6 @@ export default {
   components: {
     CitiesCount,
     CitiesListing
-  },
-
-  data () {
-    return {
-      selectedCity: null
-    }
   },
 
   computed: {
@@ -41,17 +35,15 @@ export default {
 
   created () {
     this.$nextTick(() => {
-      this.$eventBus.$emit('show-city-on-map', this.cities[0])
+      this.setSelectedCity(this.cities[0])
     })
   },
 
-  eventBusCallbacks: {
-    'show-city-on-map': 'setSelectedCity'
-  },
-
   methods: {
+    ...mapMutations('cities', ['setCity']),
+
     setSelectedCity (city) {
-      this.selectedCity = city
+      this.setCity(city)
     }
   }
 }

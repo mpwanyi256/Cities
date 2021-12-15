@@ -131,16 +131,21 @@ export default {
         ]
       }
     ],
-    search: ''
+    search: '',
+    selectedCity: null
   },
   mutations: {
     setSearchVal (state, searchInput) {
       state.search = searchInput
+    },
+    setCity (state, city) {
+      state.selectedCity = city
     }
   },
   actions: {},
   getters: {
     cities: (state) => state.cities,
-    search: (state) => state.search
+    search: (state) => state.search,
+    selectedCity: (state) => state.selectedCity
   }
 }

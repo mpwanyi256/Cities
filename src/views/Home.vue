@@ -13,6 +13,7 @@
 <script>
 import MapView from '@/components/home/MapView.vue'
 import Cities from '@/components/home/Cities.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
@@ -22,10 +23,8 @@ export default {
     Cities
   },
 
-  data () {
-    return {
-      selectedCity: null
-    }
+  computed: {
+    ...mapGetters('cities', ['selectedCity'])
   }
 }
 </script>

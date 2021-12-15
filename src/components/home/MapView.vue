@@ -2,14 +2,14 @@
     <div class="map-view">
         <GmapMap
             :center="Coordinates"
-            :zoom="13"
+            :zoom="12"
             style="width: 100%; height: 100%"
         >
-            <GmapMarker
-                v-if="selectedCity"
-                :position="Coordinates"
-                :clickable="true"
-            />
+          <GmapMarker
+            v-if="selectedCity"
+            :position="Coordinates"
+            :clickable="true"
+          />
         </GmapMap>
     </div>
 </template>
@@ -55,8 +55,7 @@ export default {
       }
       return {
         lat: this.map.getCenter().lat().toFixed(3),
-        lng: this.map.getCenter().lng().toFixed(3),
-        bound: this.map.getBounds()
+        lng: this.map.getCenter().lng().toFixed(3)
       }
     }
   },
@@ -69,10 +68,6 @@ export default {
     }
   },
 
-  eventBusCallbacks: {
-    'show-city-on-map': 'toggleCity'
-  },
-
   methods: {
     cityCoordinates (city) {
       return { lat: parseFloat(city.latitude), lng: parseFloat(city.longitude) }
@@ -81,16 +76,6 @@ export default {
     toggleCity (city) {
       this.Coordinates = this.cityCoordinates(city)
     }
-  },
-
-  created () {
-    // this.$getLocation()
-    //   .then(coordinates => {
-    //     this.Coordinates = coordinates
-    //   })
-    //   .catch(() => {
-    //     alert('Sorry we could not access your current location')
-    //   })
   }
 
 }

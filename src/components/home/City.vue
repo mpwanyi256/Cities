@@ -2,7 +2,7 @@
     <div class="city"
         @click="viewCityOnMap"
     >
-        <div class="map-wrap">
+        <div class="image-wrap">
             <v-img
                 alt="Ottonova logo"
                 class="logo shrink"
@@ -48,6 +48,7 @@
     </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'City',
@@ -60,8 +61,10 @@ export default {
   },
 
   methods: {
+    ...mapMutations('cities', ['setCity']),
+
     viewCityOnMap () {
-      this.$eventBus.$emit('show-city-on-map', this.city)
+      this.setCity(this.city)
     }
   }
 }
@@ -87,7 +90,7 @@ export default {
             overflow: hidden;
         }
 
-        .map-wrap {
+        .image-wrap {
             border: 1px solid $nav-border-color;
             border-radius: 8px;
             display: block;
@@ -137,7 +140,7 @@ export default {
                 padding: 10px;
             }
 
-            .map-wrap {
+            .image-wrap {
                 border: 1px solid $nav-border-color;
                 border-radius: 0;
                 display: block;
