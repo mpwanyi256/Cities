@@ -5,13 +5,6 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 
-import eventBus from './plugins/event-bus'
-import EventBusCallbacks from './plugins/Eventbus'
-
-Vue.use(EventBusCallbacks, eventBus)
-
-Vue.prototype.$eventBus = eventBus
-
 const VueGoogleMaps = require('vue2-google-maps')
 
 Vue.use(VueGoogleMaps, {

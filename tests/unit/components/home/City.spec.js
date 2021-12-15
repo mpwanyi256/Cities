@@ -88,5 +88,8 @@ describe('City.vue test suite', () => {
       .catch(e => {
         console.log('Error', e)
       })
+
+    // spy.mockReset()
+    // spy.mockRestore()
   })
 })

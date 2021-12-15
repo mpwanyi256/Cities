@@ -1,12 +1,12 @@
 <template>
-    <div class="cities-view">
-        <CitiesCount
-          :cities="cities"
-        />
-        <CitiesListing
-          :cities="filteredSearch"
-        />
-    </div>
+  <div class="cities-view">
+      <CitiesCount
+        :cities="cities"
+      />
+      <CitiesListing
+        :cities="filteredSearch"
+      />
+  </div>
 </template>
 <script>
 import CitiesCount from '@/components/home/CitiesCount.vue'

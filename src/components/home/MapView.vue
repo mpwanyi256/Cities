@@ -1,9 +1,9 @@
 <template>
     <div class="map-view">
         <GmapMap
-            :center="Coordinates"
-            :zoom="12"
-            style="width: 100%; height: 100%"
+          :center="Coordinates"
+          :zoom="12"
+          style="width: 100%; height: 100%"
         >
           <GmapMarker
             v-if="selectedCity"
@@ -14,7 +14,6 @@
     </div>
 </template>
 <script>
-import { gmapApi } from 'vue2-google-maps'
 
 export default {
   name: 'MapView',
@@ -37,26 +36,7 @@ export default {
         lat: 10.3157,
         lng: 123.8854
       },
-      zoom: 15,
-      map: null
-    }
-  },
-
-  computed: {
-    google: gmapApi,
-
-    mapCoordinates () {
-      if (!this.map) {
-        return {
-          lat: 0,
-          lng: 0,
-          bound: []
-        }
-      }
-      return {
-        lat: this.map.getCenter().lat().toFixed(3),
-        lng: this.map.getCenter().lng().toFixed(3)
-      }
+      zoom: 15
     }
   },
 

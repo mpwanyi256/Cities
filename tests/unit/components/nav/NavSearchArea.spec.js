@@ -53,5 +53,8 @@ describe('NavSearchArea test suite', () => {
     wrapper.vm.search = 'Kampala'
     await wrapper.vm.$nextTick()
     expect(spy).toBeCalled()
+
+    spy.mockReset()
+    spy.mockRestore()
   })
 })

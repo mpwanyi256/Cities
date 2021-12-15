@@ -1,8 +1,12 @@
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
-  collectCoverage: true
-  // collectCoverageFrom: [
-  //   'src/**/*.{js,vue}',
-  //   '!src/main.js' // No need to cover bootstrap file
-  // ]
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{js,vue}',
+    '!src/main.js',
+    '!src/plugins/**',
+    '!src/router/**',
+    '!src/store/**',
+    '!src/registerServiceWorker.js'
+  ]
 }
