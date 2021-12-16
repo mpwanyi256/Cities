@@ -1,9 +1,11 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Navbar from '@/components/nav/Navbar.vue'
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 
 const localVue = createLocalVue()
 localVue.use(VueRouter)
+localVue.use(Vuex)
 
 const routes = [
   {
@@ -16,10 +18,29 @@ const router = new VueRouter({
   routes
 })
 
+const state = {
+  loading: false
+}
+
+const getters = {
+  loading: (state) => state.loading
+}
+
+const store = new Vuex.Store({
+  modules: {
+    cities: {
+      namespaced: true,
+      state,
+      getters
+    }
+  }
+})
+
 let wrapper
 beforeEach(() => {
   wrapper = shallowMount(Navbar, {
     localVue,
+    store,
     router,
     stubs: ['router-link', 'v-img']
   })

@@ -26,5 +26,11 @@ npm run build
 npm run lint
 ```
 
+## Deployment
+- Production site backend [https://cities-app-ug.herokuapp.com/](https://cities-app-ug.herokuapp.com/)
+
+- Production site frontend [https://cities-app-ug.netlify.app/](https://cities-app-ug.netlify.app/)
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

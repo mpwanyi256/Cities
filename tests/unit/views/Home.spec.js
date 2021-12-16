@@ -26,12 +26,14 @@ const state = {
   selectedCity: city,
   cities: [{ ...city }],
   citiesCount: 1,
-  search: ''
+  search: '',
+  loading: false
 }
 
 const getters = {
   selectedCity: (state) => state.selectedCity,
-  citiesCount: (state) => state.citiesCount
+  citiesCount: (state) => state.citiesCount,
+  loading: (state) => state.loading
 }
 
 const actions = {

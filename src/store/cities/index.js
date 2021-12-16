@@ -7,7 +7,7 @@ export default {
     citiesCount: 0,
     search: '',
     selectedCity: null,
-    loading: false
+    loading: true
   },
   mutations: {
     setSearchVal (state, searchInput) {

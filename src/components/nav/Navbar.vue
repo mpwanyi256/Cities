@@ -1,5 +1,5 @@
 <template>
-    <div class="nav_bar">
+    <div class="nav_bar" v-if="!loading">
         <div class="logo-area">
             <router-link to="/">
                 <v-img
@@ -20,12 +20,16 @@
 </template>
 <script>
 import NavSearchArea from '@/components/nav/NavSearchArea.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Navbar',
 
   components: {
     NavSearchArea
+  },
+  computed: {
+    ...mapGetters('cities', ['loading'])
   }
 }
 </script>

@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <div class="cities-listing">
-      <Cities />
-    </div>
-    <div class="cities-overview">
-      <MapView
-      :selected-city="selectedCity" />
-    </div>
+  <div :class="loading ? 'loading': 'home'">
+    <Loading v-if="loading" />
+    <template v-else>
+      <div class="cities-listing">
+        <Cities />
+      </div>
+      <div class="cities-overview">
+        <MapView
+        :selected-city="selectedCity" />
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import MapView from '@/components/home/MapView.vue'
 import Cities from '@/components/home/Cities.vue'
+import Loading from '@/components/home/Loading.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -20,11 +24,12 @@ export default {
 
   components: {
     MapView,
-    Cities
+    Cities,
+    Loading
   },
 
   computed: {
-    ...mapGetters('cities', ['selectedCity'])
+    ...mapGetters('cities', ['selectedCity', 'loading'])
   },
 
   created () {
@@ -38,6 +43,17 @@ export default {
 </script>
 <style scoped lang="scss">
   @import '@/styles/constants.scss';
+
+  .loading-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
 
   .home {
     height: calc(100vh - 56px);
