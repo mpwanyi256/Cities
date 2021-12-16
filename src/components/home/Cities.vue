@@ -26,16 +26,16 @@ export default {
     ...mapGetters('cities', ['cities', 'search']),
 
     filteredSearch () {
-      return this.cities.filter(City =>
+      return this.cities.cities ? this.cities.cities.filter(City =>
         City.name.toLowerCase().includes(this.search) ||
         City.landmarks.toString().toLowerCase().includes(this.search) ||
-        City.continent.toLowerCase().includes(this.search))
+        City.continent.toLowerCase().includes(this.search)) : []
     }
   },
 
   created () {
     this.$nextTick(() => {
-      this.setSelectedCity(this.cities[0])
+      if (this.cities?.cities.length) this.setSelectedCity(this.cities.cities[0])
     })
   },
 

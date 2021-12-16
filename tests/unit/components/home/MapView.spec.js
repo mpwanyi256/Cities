@@ -56,7 +56,7 @@ beforeEach(() => {
 })
 
 describe('MapView test suite', () => {
-  it('Tests if component was correctlt rendered', () => {
+  it('Tests if component was correctly rendered', () => {
     expect(wrapper.classes()).toContain('map-view')
 
     const GmapMapComponent = wrapper.find('GmapMap')

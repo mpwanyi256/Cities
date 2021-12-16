@@ -1,7 +1,7 @@
 <template>
     <div class="cities-count">
         <div class="count-display">
-            <p>100+ cities</p>
+            <p>{{ `${cities.count}+ cities` }}</p>
         </div>
     </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 
   props: {
     cities: {
-      type: Array,
+      type: Object,
       reqiured: true
     }
   }
