@@ -24,6 +24,7 @@ const state = {
       ]
     }
   ],
+  citiesCount: 1,
   search: '',
   selectedCity: null
 }
@@ -36,7 +37,12 @@ const mutations = {
 
 const getters = {
   search: (state) => state.search,
-  cities: (state) => state.cities
+  cities: (state) => state.cities,
+  citiesCount: (state) => state.citiesCount
+}
+
+const actions = {
+  fetchCities: jest.fn()
 }
 
 const store = new Vuex.Store({
@@ -45,7 +51,8 @@ const store = new Vuex.Store({
       namespaced: true,
       state,
       mutations,
-      getters
+      getters,
+      actions
     }
   }
 })
@@ -69,5 +76,16 @@ describe('Cities.vue test suite', () => {
 
     const CitiesListingComponent = wrapper.find('CitiesListing')
     expect(CitiesListingComponent).toBeTruthy()
+  })
+
+  it('Tests filteredSearch computed prop', async () => {
+    state.search = 'Kampala'
+    await wrapper.vm.$nextTick()
+    expect(wrapper.vm.search).toEqual('Kampala')
+  })
+
+  it('Tests the created hook', async () => {
+    await wrapper.vm.$nextTick()
+    expect(state.selectedCity).toBe(state.cities[0])
   })
 })

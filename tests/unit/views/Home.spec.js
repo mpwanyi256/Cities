@@ -23,11 +23,24 @@ const city = {
 }
 
 const state = {
-  selectedCity: city
+  selectedCity: city,
+  cities: [{ ...city }],
+  citiesCount: 1,
+  search: ''
 }
 
 const getters = {
-  selectedCity: (state) => state.selectedCity
+  selectedCity: (state) => state.selectedCity,
+  citiesCount: (state) => state.citiesCount
+}
+
+const actions = {
+  fetchCities: jest.fn().mockReturnValue(() => {
+    return {
+      cities: [{ ...city }],
+      count: 0
+    }
+  })
 }
 
 const store = new Vuex.Store({
@@ -35,7 +48,8 @@ const store = new Vuex.Store({
     cities: {
       namespaced: true,
       state,
-      getters
+      getters,
+      actions
     }
   }
 })

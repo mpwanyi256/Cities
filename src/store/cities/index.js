@@ -3,7 +3,8 @@ import axios from 'axios'
 export default {
   namespaced: true,
   state: {
-    cities: {},
+    cities: [],
+    citiesCount: 0,
     search: '',
     selectedCity: null,
     loading: false
@@ -16,7 +17,8 @@ export default {
       state.selectedCity = city
     },
     setCities (state, cities) {
-      state.cities = cities
+      state.cities = cities.cities
+      state.citiesCount = cities.count
     },
     toggleLoading (state, status) {
       state.loading = status
@@ -27,7 +29,7 @@ export default {
       commit('toggleLoading', true)
       axios.get('cities/')
         .then(response => {
-          commit('setCities', response.data)
+          if (!response.data.error) { commit('setCities', response.data) }
         })
         .catch((e) => {
           console.error('Something went wrong while fetching cities', e)
@@ -39,6 +41,7 @@ export default {
   },
   getters: {
     cities: (state) => state.cities,
+    citiesCount: (state) => state.citiesCount,
     search: (state) => state.search,
     selectedCity: (state) => state.selectedCity,
     loading: (state) => state.loading
