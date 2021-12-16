@@ -1,7 +1,7 @@
 <template>
-    <div class="loading">
-        <v-progress-linear indeterminate color="blue darken-2" />
-    </div>
+  <div class="loading">
+    <v-progress-linear indeterminate color="blue darken-2" />
+  </div>
 </template>
 <script>
 export default {
