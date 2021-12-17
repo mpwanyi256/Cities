@@ -30,6 +30,11 @@ npm run build
 npm run lint
 ```
 
+### Running tests
+```
+npm run test:unit
+```
+
 ## Deployment
 - Production site backend [https://cities-app-ug.herokuapp.com/](https://cities-app-ug.herokuapp.com/)
 
