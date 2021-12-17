@@ -12,7 +12,7 @@
 import CitiesCount from '@/components/home/CitiesCount.vue'
 import CitiesListing from '@/components/home/CitiesListing.vue'
 
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Cities',
@@ -30,20 +30,6 @@ export default {
         City.name.toLowerCase().includes(this.search) ||
         City.landmarks.toString().toLowerCase().includes(this.search) ||
         City.continent.toLowerCase().includes(this.search))
-    }
-  },
-
-  created () {
-    this.$nextTick(() => {
-      if (this.cities.length) this.setSelectedCity(this.cities[0])
-    })
-  },
-
-  methods: {
-    ...mapMutations('cities', ['setCity']),
-
-    setSelectedCity (city) {
-      this.setCity(city)
     }
   }
 }

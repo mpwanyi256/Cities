@@ -83,13 +83,10 @@ describe('City.vue test suite', () => {
     const mainDiv = wrapper.find('.city')
     mainDiv.trigger('click')
       .then(() => {
-        expect(spy).toBeCalled()
+        expect(spy).toHaveBeenCalled()
       })
       .catch(e => {
         console.log('Error', e)
       })
-
-    // spy.mockReset()
-    // spy.mockRestore()
   })
 })

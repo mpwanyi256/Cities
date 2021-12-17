@@ -52,7 +52,7 @@ describe('NavSearchArea test suite', () => {
     const spy = jest.spyOn(wrapper.vm, 'setSearchVal')
     wrapper.vm.search = 'Kampala'
     await wrapper.vm.$nextTick()
-    expect(spy).toBeCalled()
+    expect(spy).toHaveBeenCalled()
 
     spy.mockReset()
     spy.mockRestore()

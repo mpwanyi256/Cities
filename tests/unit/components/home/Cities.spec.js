@@ -83,9 +83,4 @@ describe('Cities.vue test suite', () => {
     await wrapper.vm.$nextTick()
     expect(wrapper.vm.search).toEqual('Kampala')
   })
-
-  it('Tests the created hook', async () => {
-    await wrapper.vm.$nextTick()
-    expect(state.selectedCity).toBe(state.cities[0])
-  })
 })

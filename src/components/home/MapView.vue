@@ -6,7 +6,6 @@
           style="width: 100%; height: 100%"
         >
           <GmapMarker
-            v-if="selectedCity"
             :position="Coordinates"
             :clickable="true"
           />
@@ -32,19 +31,21 @@ export default {
 
   data () {
     return {
-      Coordinates: {
-        lat: 10.3157,
-        lng: 123.8854
-      },
+      Coordinates: null,
       zoom: 15
     }
   },
 
   watch: {
     selectedCity (city) {
-      if (city) {
-        this.toggleCity(city)
-      }
+      this.toggleCity(city)
+    }
+  },
+
+  created () {
+    this.Coordinates = {
+      lat: 0.3476,
+      lng: 32.5825
     }
   },
 
@@ -61,12 +62,12 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-    @import '@/styles/constants.scss';
+  @import '@/styles/constants.scss';
 
-    .map-view {
-        height: 100%;
-        width: 100%;
-        background-color: $nav-border-color;
-    }
+  .map-view {
+      height: 100%;
+      width: 100%;
+      background-color: $nav-border-color;
+  }
 
 </style>
