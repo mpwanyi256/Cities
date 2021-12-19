@@ -11,7 +11,6 @@ beforeEach(() => {
 describe('App.vue test suite', () => {
   it('Tests if Navbar component exists', () => {
     const navBar = wrapper.find('Navbar')
-
     expect(navBar).toBeTruthy()
   })
 })
