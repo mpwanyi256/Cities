@@ -1,5 +1,27 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import MapView from '@/components/home/MapView.vue'
+import Vuex from 'vuex'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
+const state = {
+  loadingCityInfo: false
+}
+
+const getters = {
+  loadingCityInfo: (state) => state.loadingCityInfo
+}
+
+const store = new Vuex.Store({
+  modules: {
+    cities: {
+      namespaced: true,
+      state,
+      getters
+    }
+  }
+})
 
 const cities = [{
   name: 'Sydney',
@@ -38,6 +60,8 @@ const cities = [{
 let wrapper
 beforeEach(() => {
   wrapper = shallowMount(MapView, {
+    localVue,
+    store,
     propsData: {
       cities,
       selectedCity: null

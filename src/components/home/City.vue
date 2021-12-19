@@ -30,7 +30,7 @@
                     <span>
                         <v-icon small left>mdi-account-multiple</v-icon>
                         <strong>Polulation:</strong></span>
-                        {{ city.population }}
+                        {{ poppulation }}
                 </p>
                 <p>
                     <span>
@@ -48,7 +48,7 @@
     </div>
 </template>
 <script>
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'City',
@@ -60,11 +60,21 @@ export default {
     }
   },
 
+  computed: {
+    poppulation () {
+      const PPLN_MULTUPLIER = 1000000
+      const ppln = this.city.population / PPLN_MULTUPLIER
+      const floating = this.city.population % PPLN_MULTUPLIER
+
+      return `${Math.floor(ppln)}.${floating.toString().slice(0, 3)} million`
+    }
+  },
+
   methods: {
-    ...mapMutations('cities', ['setCity']),
+    ...mapActions('cities', ['getCityDetails']),
 
     viewCityOnMap () {
-      this.setCity(this.city)
+      this.getCityDetails(this.city.id)
     }
   }
 }

@@ -19,12 +19,17 @@ const getters = {
   selectedCity: (state) => state.selectedCity
 }
 
+const actions = {
+  getCityDetails: jest.fn()
+}
+
 const store = new Vuex.Store({
   modules: {
     cities: {
       namespaced: true,
       state,
       mutations,
+      actions,
       getters
     }
   }
@@ -79,7 +84,7 @@ describe('City.vue test suite', () => {
   it('Tests for the viewCityOnMap method', async () => {
     wrapper.vm.viewCityOnMap = jest.fn()
 
-    const spy = jest.spyOn(wrapper.vm, 'setCity')
+    const spy = jest.spyOn(wrapper.vm, 'getCityDetails')
     const mainDiv = wrapper.find('.city')
     mainDiv.trigger('click')
       .then(() => {

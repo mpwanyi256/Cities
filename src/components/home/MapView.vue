@@ -1,6 +1,8 @@
 <template>
     <div class="map-view">
+      <Loading v-if="loadingCityInfo" />
         <GmapMap
+          v-else
           :center="Coordinates"
           :zoom="12"
           style="width: 100%; height: 100%"
@@ -13,9 +15,15 @@
     </div>
 </template>
 <script>
+import Loading from '@/components/home/Loading.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'MapView',
+
+  components: {
+    Loading
+  },
 
   props: {
     cities: {
@@ -47,6 +55,10 @@ export default {
       lat: 0.3476,
       lng: 32.5825
     }
+  },
+
+  computed: {
+    ...mapGetters('cities', ['loadingCityInfo'])
   },
 
   methods: {

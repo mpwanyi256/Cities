@@ -1,6 +1,11 @@
 <template>
   <div class="loading">
-    <v-progress-linear indeterminate color="blue darken-2" />
+    <v-progress-circular
+      :size="70"
+      :width="7"
+      color="blue darken-2"
+      indeterminate
+    />
   </div>
 </template>
 <script>
@@ -13,7 +18,7 @@ export default {
 
     .loading {
         height: calc(100vh - 56px);
-        width: 100vw;
+        width: 100%;
         background-color: $white;
         display: flex;
         flex-direction: column;
